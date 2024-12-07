@@ -131,7 +131,8 @@ get_port() {
         if [[ $is_count -ge 233 ]]; then
             err "自动获取可用端口失败次数达到 233 次, 请检查端口占用情况."
         fi
-        tmp_port=$(shuf -i 445-65535 -n 1)
+        #tmp_port=$(shuf -i 445-65535 -n 1)
+        tmp_port=56789
         [[ ! $(is_test port_used $tmp_port) && $tmp_port != $port ]] && break
     done
 }
